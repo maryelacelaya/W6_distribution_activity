@@ -47,14 +47,19 @@ Leaf<-as.numeric(Leaf)
 Leaves<-data.frame(Leaf,Size)
 print.data.frame(Leaves)
 
+#Plot the data
+plot(Leaf, Size)
+hist(Size, 
+     col="orange")
+
 
 ```
 
 ### Get to know your data by answering these questions:
 
-1.  What is the general shape of the data?
-2.  Are the data bounded (e.g., percents, non-negative)?
-3.  Are the data continuous, categorical, binary, or what?
+1.  What is the general shape of the data? Looks like normal distribution
+2.  Are the data bounded (e.g., percents, non-negative)? They are positive, greater than 0,
+3.  Are the data continuous, categorical, binary, or what? Numeric, continuous,
 
 ### Discuss with your group: What distribution do your data follow?
 
