@@ -147,6 +147,9 @@ Using this equation you can calculate the probability of getting x successes in 
 
 ```{r}
 # do your calculations here 
+mean(Leaves$Size)
+
+sd(Leaves$Size)
 
 ```
 
@@ -158,14 +161,27 @@ Plot a frequency distribution of these simulated data.
 # E.g., You collected data from 35 leaves and their mean length was 6 and sd was .2
 # rnorm(N = 35, mean = 6, sd = .2)
 
+#to simulate 20 data points
+sim20 <-rnorm(20,mean=8.95,sd=3.716747)
+
+#to plot the freq distribution of the simulated data
+plot(sim20)
+hist(sim20)
 ```
 
-Do the simulated data look like yours? Why or why not?
+Do the simulated data look like yours? Why or why not? Yes, looks pretty similar
 
 #### Repeat as above but simulate 1000 points.
 
 ```{r}
 # do your calculations here 
+#to simulate 20 data points
+sim1000 <-rnorm(1000,mean=8.95,sd=3.716747)
+
+#to plot the freq distribution of the simulated data
+plot(sim1000)
+hist(sim1000)
+
 ```
 
 #### Calculating probabilties from density functions:
