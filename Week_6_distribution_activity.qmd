@@ -48,9 +48,17 @@ Leaves<-data.frame(Leaf,Size)
 print.data.frame(Leaves)
 
 #Plot the data
-plot(Leaf, Size)
+plot(Size, Leaf)
+
+breaks <- seq(min(Size), max(Size), by = 1) 
+
 hist(Size, 
-     col="orange")
+     col="orange", 
+     xlab= "Size",
+     xaxt="n")  
+
+axis(1, at = seq(min(Size), max(Size), by = 1), las = 1)
+
 
 
 ```
@@ -166,7 +174,8 @@ sim20 <-rnorm(20,mean=8.95,sd=3.716747)
 
 #to plot the freq distribution of the simulated data
 plot(sim20)
-hist(sim20)
+hist(sim20,
+     col = "lightgreen")
 ```
 
 Do the simulated data look like yours? Why or why not? Yes, looks pretty similar
@@ -180,7 +189,8 @@ sim1000 <-rnorm(1000,mean=8.95,sd=3.716747)
 
 #to plot the freq distribution of the simulated data
 plot(sim1000)
-hist(sim1000)
+hist(sim1000,
+     col = "lightblue")
 
 ```
 
@@ -197,6 +207,22 @@ k = 7 # observed value
 (l^k)*(exp(-l))/(factorial(k))
 
 
+#common value: 10.8
+l=mean(Leaves$Size)
+cv=10.8
+(l^k)*(exp(-l))/(factorial(cv))
+
+#less common value: 9.9
+lc=9.9
+(l^k)*(exp(-l))/(factorial(lc))
+
+
+#not observed value: 50
+no=50
+(l^k)*(exp(-l))/(factorial(no))
+
+
+
 ```
 
 #### Calculating probabilities in R
@@ -208,6 +234,8 @@ R has functions that will do this calculation for you. They're dpois(), dnorm(),
 # when the typical hike has 5 snake sightings?
 dpois(7, lambda = 5)
 
-
+dnorm(50, l)
+dnorm(9.9,l)
+dnorm(10.8,l)
 
 ```
